@@ -8,5 +8,73 @@
     <artifactId>meeting-insight</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
+        <lombok.version>1.18.8</lombok.version>
+        <reactor-core.version>3.3.1.RELEASE</reactor-core.version>
+        <jjwt.version>0.10.7</jjwt.version>
+        <feign.version>10.2.0</feign.version>
+
+        <java.version>12</java.version>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>${reactor-core.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>jjwt-api</artifactId>
+            <groupId>io.jsonwebtoken</groupId>
+            <version>${jjwt.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>jjwt-impl</artifactId>
+            <groupId>io.jsonwebtoken</groupId>
+            <version>${jjwt.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>jjwt-jackson</artifactId>
+            <groupId>io.jsonwebtoken</groupId>
+            <version>${jjwt.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-core</artifactId>
+            <version>${feign.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
